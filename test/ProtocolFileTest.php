@@ -7,9 +7,7 @@
  * to you under the Apache License, Version 2.0 (the
  * "License"); you may not use this file except in compliance
  * with the License.  You may obtain a copy of the License at
- *
  *     http://www.apache.org/licenses/LICENSE-2.0
- *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,33 +15,36 @@
  * limitations under the License.
  */
 
-require_once('test_helper.php');
+require_once 'test_helper.php';
 
 // near-verbatim port of test_protocol.py
+
 /**
  * Class ProtocolFileTest
  */
-class ProtocolFileTest extends PHPUnit_Framework_TestCase
+class ProtocolFileTest extends PHPUnit\Framework\TestCase
 {
-  protected function setUp() {
-  }
-
-  public function testParsing() {
-    $cnt=count($this->prot_parseable);
-    for ($i=0; $i<$cnt; $i++) {
-      try {
-        AvroProtocol::parse($this->prot_data[$i]);
-      } catch (AvroSchemaParseException $x) {
-        // exception ok if we expected this protocol spec to be unparseable
-        $this->assertEquals(false, $this->prot_parseable[$i]);
-      }
+    protected function setUp()
+    {
     }
-  }
 
-  // test data
-  private $prot_parseable=array(true, true, true, true, true, true, false, true, true);
-  private $prot_data = array(
-<<<'DATUM'
+    public function testParsing()
+    {
+        $cnt = count($this->prot_parseable);
+        for ($i = 0; $i < $cnt; $i++) {
+            try {
+                AvroProtocol::parse($this->prot_data[$i]);
+            } catch (AvroSchemaParseException $x) {
+                // exception ok if we expected this protocol spec to be unparseable
+                $this->assertEquals(false, $this->prot_parseable[$i]);
+            }
+        }
+    }
+
+    // test data
+    private $prot_parseable = array(true, true, true, true, true, true, false, true, true);
+    private $prot_data      = array(
+        <<<'DATUM'
 {
   "namespace": "com.acme",
   "protocol": "HelloWorld",
@@ -64,8 +65,8 @@ class ProtocolFileTest extends PHPUnit_Framework_TestCase
   }
 }
 DATUM
-,
-<<<'DATUM'
+    ,
+        <<<'DATUM'
 {"namespace": "org.apache.avro.test",
  "protocol": "Simple",
 
@@ -120,8 +121,8 @@ DATUM
 
 }
 DATUM
-,
-<<<'DATUM'
+    ,
+        <<<'DATUM'
 {"namespace": "org.apache.avro.test.namespace",
  "protocol": "TestNamespace",
 
@@ -151,8 +152,8 @@ DATUM
 
 }
 DATUM
-,
-<<<'DATUM'
+    ,
+        <<<'DATUM'
 {"namespace": "org.apache.avro.test.namespace",
  "protocol": "TestImplicitNamespace",
 
@@ -186,8 +187,8 @@ DATUM
 
 }
 DATUM
-,
-<<<'DATUM'
+    ,
+        <<<'DATUM'
 {"namespace": "org.apache.avro.test.namespace",
  "protocol": "TestNamespaceTwo",
 
@@ -224,8 +225,8 @@ DATUM
 
 }
 DATUM
-,
-<<<'DATUM'
+    ,
+        <<<'DATUM'
 {"namespace": "org.apache.avro.test.namespace",
  "protocol": "TestValidRepeatedName",
 
@@ -258,8 +259,8 @@ DATUM
 
 }
 DATUM
-,
-<<<'DATUM'
+    ,
+        <<<'DATUM'
 {"namespace": "org.apache.avro.test.namespace",
  "protocol": "TestInvalidRepeatedName",
 
@@ -291,8 +292,8 @@ DATUM
 
 }
 DATUM
-,
-<<<'DATUM'
+    ,
+        <<<'DATUM'
 {"namespace": "org.apache.avro.test",
  "protocol": "BulkData",
 
@@ -314,8 +315,8 @@ DATUM
 
 }
 DATUM
-,
-<<<'DATUM'
+    ,
+        <<<'DATUM'
 {
   "protocol" : "API",
   "namespace" : "xyz.api",
@@ -351,5 +352,5 @@ DATUM
   }
 }
 DATUM
-  );
+    );
 }
