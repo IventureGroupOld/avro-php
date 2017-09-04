@@ -46,7 +46,7 @@
   "scripts": {
     "test": [
       "parallel-lint . --exclude vendor",
-      "phpunit test/AllTests.php"
+      "phpunit -c phpunit.xml"
     ]
   }
 }

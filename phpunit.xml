@@ -1,0 +1,24 @@
+<phpunit
+        bootstrap="test/bootstrap.php"
+>
+    <testsuite name="wikimedia/avro">
+        <file>test/DataFileTest.php</file>
+        <file>test/DatumIOTest.php</file>
+        <file>test/FloatIntEncodingTest.php</file>
+        <file>test/IODatumReaderTest.php</file>
+        <file>test/LongEncodingTest.php</file>
+        <file>test/NameTest.php</file>
+        <file>test/ProtocolFileTest.php</file>
+        <file>test/SchemaTest.php</file>
+        <file>test/StringIOTest.php</file>
+    </testsuite>
+    <filter>
+        <whitelist>
+            <directory>lib/</directory>
+        </whitelist>
+    </filter>
+    <logging>
+        <log type="coverage-clover" target="test/log/coverage.xml"  />
+        <log type="junit" target="test/log/logfile.xml" logIncompleteSkipped="false"/>
+    </logging>
+</phpunit>
