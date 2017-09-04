@@ -15,7 +15,7 @@ systems as `php5-gmp` and `phpunit`, respectively.
 Getting started
 ---------------
 ```
-$ composer require iventuregroup/avro
+$ composer require iventuregroup/avro-php
 ```
 
 History
