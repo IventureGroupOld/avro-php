@@ -15,8 +15,6 @@
  * limitations under the License.
  */
 
-require_once 'test_helper.php';
-
 /**
  * Class NameExample
  */

@@ -15,8 +15,6 @@
  * limitations under the License.
  */
 
-require_once 'test_helper.php';
-
 /**
  * Class DataFileTest
  */
@@ -45,7 +43,7 @@ class DataFileTest extends PHPUnit_Framework_TestCase
             $this->data_files = array();
         }
         $data_file = "$data_file." . self::current_timestamp();
-        $full = join(DIRECTORY_SEPARATOR, array(TEST_TEMP_DIR, $data_file));
+        $full = implode(DIRECTORY_SEPARATOR, array(TEST_TEMP_DIR, $data_file));
         $this->data_files [] = $full;
         return $full;
     }

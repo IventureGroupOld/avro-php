@@ -15,8 +15,6 @@
  * limitations under the License.
  */
 
-require_once 'test_helper.php';
-
 // near-verbatim port of test_protocol.py
 
 /**
