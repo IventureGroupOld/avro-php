@@ -5,7 +5,7 @@ A library for using [Avro](http://avro.apache.org/) with PHP.
 
 Requirements
 ------------
- * PHP 5
+ * PHP 5/7
  * On 32-bit platforms, the [GMP PHP extension](http://php.net/gmp)
  * For testing, [PHPUnit](http://www.phpunit.de/)
 
@@ -15,9 +15,9 @@ systems as `php5-gmp` and `phpunit`, respectively.
 Getting started
 ---------------
 ```
-$ composer require wikimedia/avro
+$ composer require iventuregroup/avro-php
 ```
 
 History
 -------
-Extracted from https://github.com/apache/avro using `git subtree`.
+Extracted from https://github.com/wikimedia/avro-php.

@@ -110,8 +110,9 @@ class AvroDataIO
      */
     public static function metadata_schema()
     {
-        if (is_null(self::$metadata_schema))
+        if (is_null(self::$metadata_schema)) {
             self::$metadata_schema = AvroSchema::parse(self::METADATA_SCHEMA_JSON);
+        }
         return self::$metadata_schema;
     }
 
@@ -132,8 +133,9 @@ class AvroDataIO
 
         switch ($mode) {
             case AvroFile::WRITE_MODE:
-                if (is_null($schema))
+                if (is_null($schema)) {
                     throw new AvroDataIOException('Writing an Avro file requires a schema.');
+                }
                 $file = new AvroFile($file_path, AvroFile::WRITE_MODE);
                 $io = self::open_writer($file, $schema);
                 break;
